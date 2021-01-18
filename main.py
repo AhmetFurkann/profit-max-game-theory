@@ -55,7 +55,15 @@ class MainScreenManager(ScreenManager):
         super(MainScreenManager, self).__init__()
         self.home_screen = GetInfoScreenManager()
         self.home_screen.name = "home_screen"
+        
+        # Todo: Add A Screen For the Tables
+        self.table_screen = Screen()
+        self.table_screen.name = "another_screen"
+        
         self.add_widget(self.home_screen)
+        self.add_widget(self.table_screen)
+        
+        self.current = "home_screen"
 
 
 class GameTheoryApp(MDApp):
