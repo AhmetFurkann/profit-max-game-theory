@@ -2,7 +2,7 @@ from kivymd.uix.button import MDFillRoundFlatButton
 from kivy.uix.screenmanager import ScreenManager
 from kivymd.uix.textfield import MDTextField
 from kivymd.uix.boxlayout import MDBoxLayout
-from operations import GetRowColScreen
+from screens import GetRowColScreen
 from kivymd.uix.screen import Screen
 from kivymd.app import MDApp
 
