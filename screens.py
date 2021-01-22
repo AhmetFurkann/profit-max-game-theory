@@ -64,4 +64,39 @@ class GetRowColScreen(Screen):
             col.size_hint_y = self.element_size_hint
             col.mode = "rectangle"
             self.background.add_widget(col)
- 
+            
+            
+class TableScreen(Screen):
+    def __init__(self):
+        super(TableScreen, self).__init__()
+        self.background = MDBoxLayout()
+        self.background.orientation = "vertical"
+        
+        self.table_name_label = MDLabel(text="Company X")
+        self.table_name_label.halign = "center"
+        self.table_name_label.font_style = "H4"
+        self.table_name_label.size_hint_y = 0.3
+
+        self.__table_rows = [("A", "Value1", "Value1", "Value1"),
+                             ("B", "Value2", "Value2", "Value2"),
+                             ]
+        self.__table_cols = [("", dp(20)),
+                             ("1", dp(20)),
+                             ("2", dp(20)),
+                             ("3", dp(20))]
+        
+        self.create_table()
+        self.add_widgets_to_layout()
+        self.add_widget(self.background)
+        
+        def create_table(self):
+            self.table = MDDataTable(size_hint=(0.7, 0.6),
+                                 pos_hint={"center_x": .5},
+                                 column_data=self.__table_cols,
+                                 row_data=self.__table_rows)
+            
+        def add_widgets_to_layout(self):
+            self.background.add_widget(self.table_name_label)
+            self.background.add_widget(self.table)
+            
+            
